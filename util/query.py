@@ -10,6 +10,8 @@ def query_dict_to_sqlalchemy(model, query, filter_dict):
                 continue
             if op == "ilike":
                 query = query.filter(col.ilike(f"%{value}%"))
+            elif op == "iexact":
+                query = query.filter(col.ilike(value))
             elif op == "eq":
                 query = query.filter(col == value)
             elif op == "gte":

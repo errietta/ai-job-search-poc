@@ -38,3 +38,14 @@ class Job(Base):
     remote = Column(Boolean, nullable=True)
     hybrid = Column(Boolean, nullable=True)
     industry = Column(String, nullable=True)
+
+
+class CompanySize(Base):
+    __tablename__ = "company_sizes"
+    id = Column(Integer, primary_key=True, index=True)
+    size = Column(String, nullable=False)
+    min_employees = Column(Integer, nullable=True)
+    max_employees = Column(Integer, nullable=True)
+
+    def __repr__(self):
+        return f"<CompanySize(size={self.size})>"

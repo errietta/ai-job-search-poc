@@ -56,3 +56,13 @@ class JobFilter(BaseModel):
         default=None,
         description="Filter jobs by minimum salary.",
     )
+    company_size: str = Field(
+        default=None,
+        description="Filter jobs by company size",
+        examples=[
+            "small",
+            "medium",
+            "large",
+            "enterprise",
+        ],
+    )
