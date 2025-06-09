@@ -1,5 +1,15 @@
 # Job Search FastAPI Project
 
+A certain job board website is flouting an 'AI job search' functionality.
+The problem is, it's absolutely dreadful.
+Here's a proof of concept I spent literally 2 hours on that I think works better.
+
+e.g.:
+
+```
+http://localhost:8000/jobs-ai-search?filter=at least $80000 medium size company remote in Matthewshaven
+```
+
 This project is a FastAPI application with a PostgreSQL database, managed using Docker Compose and Alembic for migrations.
 
 ## Prerequisites
