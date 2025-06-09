@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String, Boolean, Enum
+from sqlalchemy.orm import declarative_base
 import enum
-from main import Base
+
+Base = declarative_base()
 
 
 class EmploymentTypeEnum(enum.Enum):
@@ -27,7 +29,7 @@ class Job(Base):
     company_employee_count = Column(Integer, nullable=True)
     location = Column(String, nullable=True)
     description = Column(String, nullable=True)
-    salary = Column(String, nullable=True)
+    salary = Column(Integer, nullable=True)
     url = Column(String, nullable=True)
     date_posted = Column(String, nullable=True)
     job_type = Column(String, nullable=True)

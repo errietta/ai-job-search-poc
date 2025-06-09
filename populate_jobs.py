@@ -14,7 +14,7 @@ def populate_jobs(n=100):
             company_employee_count=random.randint(10, 10000),
             location=fake.city(),
             description=fake.text(max_nb_chars=200),
-            salary=f"${random.randint(40000, 200000)}",
+            salary=random.randint(40000, 200000),
             url=fake.url(),
             date_posted=str(fake.date_this_year()),
             job_type=random.choice(["permanent", "temporary", "contract"]),
