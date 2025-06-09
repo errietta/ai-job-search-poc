@@ -11,6 +11,30 @@ logger = logging.getLogger(__name__)
 
 
 def get_llm_job_filters(query_text: str) -> dict:
+    """
+    Generate a smart job filter using an LLM based on the provided query text.
+    EXAMPLE:
+
+    ```
+        query_text = "at least $80000 medium size company remote in Matthewshaven"
+
+        {
+            'salary__gte': 80000,
+            'remote': True,
+            'location__ilike': 'Matthewshaven',
+            'company_employee_count__gte': 51, 'company_employee_count__lte': 250
+        }
+    ```
+
+    ```
+    query_text = "salary of at least $100000 in San Francisco"
+
+    {
+        'salary__gte': 100000,
+        'location__ilike': 'San Francisco'
+    }
+    ```
+    """
     llm = ChatOpenAI(
         model="gpt-4.1", temperature=0.0, max_tokens=1000, timeout=60, max_retries=2
     ).with_structured_output(method="json_mode")
