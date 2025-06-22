@@ -1,5 +1,5 @@
+from db import SessionLocal
 from models import Job, EmploymentTypeEnum, ExperienceLevelEnum
-from main import SessionLocal
 from faker import Faker
 import random
 
