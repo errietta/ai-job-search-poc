@@ -33,6 +33,11 @@ cd job-search
 docker compose up --build
 ```
 
+OR:
+```
+uvicorn main:app
+```
+
 This will start both the FastAPI app and a Postgres database. The API will be available at [http://localhost:8000](http://localhost:8000).
 
 ### 3. Install dependencies (for migrations/scripts)
